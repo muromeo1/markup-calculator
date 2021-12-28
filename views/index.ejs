@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/salaryCalculator.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <input id="salary" type="number" placeholder="Salary in €">
+    <br>
+    <br>
+    <p>€ 1 = R$ <span id="euro" value='0'>0</span></p>
+
+    <table style="text-align: left;">
+      <tr>
+        <th>Valor em reais: </th>
+        <td>R$ <span id="reais" value='0'>0</span></td>
+      </tr>
+      <tr>
+        <th>Valor DAS: </th>
+        <td>R$ <span id="das" value='0'>0</span></td>
+      </tr>
+    </table>
+    <br>
+
+    <table style="text-align: left;">
+      <tr>
+        <th>Valor total: </th>
+        <td>R$ <span id="reaisTotal" value='0'>0</span></td>
+      </tr>
+    </table>
+  </body>
+</html>
