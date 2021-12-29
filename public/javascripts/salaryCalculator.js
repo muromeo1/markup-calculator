@@ -4,12 +4,16 @@ document.addEventListener('DOMContentLoaded', function(){
 
   let euro = document.getElementById('euro');
   let salary = document.getElementById('salary');
+  let button = document.getElementById('buttonCalculate');
 
   salary.addEventListener('keydown', function (event) {
     if (event.key === 'Enter' && salary.value != '') {
-      localStorage.setItem('salary-MC', salary.value)
-      localStorage.setItem('euro-MC', euro.value)
+      calculateSalary(salary.value, euro.value);
+    };
+  });
 
+  button.addEventListener('click', function () {
+    if (salary.value != '') {
       calculateSalary(salary.value, euro.value);
     };
   });
@@ -42,6 +46,9 @@ function getEuroValue() {
 };
 
 function calculateSalary(salary, euro) {
+  localStorage.setItem('salary-MC', salary)
+  localStorage.setItem('euro-MC', euro)
+
   let reais = document.getElementById('reais');
   let das = document.getElementById('das');
   let remessa = document.getElementById('remessaOnline');
