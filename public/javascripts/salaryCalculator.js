@@ -62,8 +62,8 @@ function calculateSalary(salary, euro) {
   let value = (salary * euro);
   let valueDas = -(value * 0.06);
   let valueRemessa = -(value * 0.0198974);
-  let valueIof = -(value * 0.0038);
-  let total = (value + valueDas + valueRemessa + valueIof);
+  let valueIof = -((value + valueRemessa) * 0.0038);
+  let total = (value + valueRemessa + valueIof + valueDas);
 
   reais.value = format(value);
   reais.textContent = format(value);
