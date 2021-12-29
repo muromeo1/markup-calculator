@@ -45,6 +45,10 @@ function getEuroValue() {
     });
 };
 
+function format(value) {
+  return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value || 0);
+};
+
 function calculateSalary(salary, euro) {
   localStorage.setItem('salary-MC', salary)
   localStorage.setItem('euro-MC', euro)
@@ -55,25 +59,25 @@ function calculateSalary(salary, euro) {
   let iof = document.getElementById('iof');
   let reaisTotal = document.getElementById('reaisTotal');
 
-  let value = (salary * euro).toFixed(2);
-  let valueDas = (value * 0.06).toFixed(2);
-  let valueRemessa = (value * 0.0198974).toFixed(2);
-  let valueIof = (value * 0.0038).toFixed(2);
-  let total = (value - valueDas - valueRemessa - valueIof).toFixed(2);
+  let value = (salary * euro);
+  let valueDas = -(value * 0.06);
+  let valueRemessa = -(value * 0.0198974);
+  let valueIof = -(value * 0.0038);
+  let total = (value + valueDas + valueRemessa + valueIof);
 
-  reais.value = value;
-  reais.textContent = value;
+  reais.value = format(value);
+  reais.textContent = format(value);
 
-  das.value = valueDas;
-  das.textContent = valueDas;
+  das.value = format(valueDas);
+  das.textContent = format(valueDas);
 
-  remessa.value = valueRemessa;
-  remessa.textContent = valueRemessa;
+  remessa.value = format(valueRemessa);
+  remessa.textContent = format(valueRemessa);
 
-  iof.value = valueIof;
-  iof.textContent = valueIof;
+  iof.value = format(valueIof);
+  iof.textContent = format(valueIof);
 
-  reaisTotal.value = total;
-  reaisTotal.textContent = total;
+  reaisTotal.value = format(total);
+  reaisTotal.textContent = format(total);
 };
 
