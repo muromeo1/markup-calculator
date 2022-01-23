@@ -11,7 +11,7 @@
     <script src="/javascripts/salaryCalculator.js"></script>
     <script src="/darkmode-js.min.js"></script>
   </head>
-  <body>
+  <body class="bg-dark text-white-50">
     <div class="container d-flex justify-content-center mt-5">
       <div class="main">
         <div class="header text-center">
@@ -23,8 +23,8 @@
 
         <div class="input">
           <div class="input-group input-group-lg mb-3">
-            <span class="input-group-text">€</span>
-            <input type="number" class="form-control" inputmode="numeric" placeholder="Salário em €" id="salary" aria-label="Salário em €" aria-describedby="buttonCalculate">
+            <span class="input-group-text bg-secondary grey-outline text-dark"><b>€</b></span>
+            <input type="number" class="form-control bg-dark text-white-50 grey-outline" inputmode="numeric" placeholder="Salário em €" id="salary" aria-label="Salário em €" aria-describedby="buttonCalculate">
             <button class="btn btn-outline-secondary" type="button" id="buttonCalculate">Calcular</button>
           </div>
         </div>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="table-values">
-          <table class="table table-borderless">
+          <table class="table table-borderless text-white-50">
             <tbody>
               <tr>
                 <th scope="row">Valor em reais</th>

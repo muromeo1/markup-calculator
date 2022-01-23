@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/darkmode-js/lib'));
+app.use('/favicon.ico', express.static('public/images/favicon.ico'));
 
 app.use('/', indexRouter);
 
