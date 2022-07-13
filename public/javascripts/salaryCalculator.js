@@ -60,7 +60,7 @@ function calculateSalary(salary, euro) {
   let reaisTotal = document.getElementById('reaisTotal');
 
   let value = (salary * euro);
-  let valueDas = -(value * 0.06);
+  let valueDas = -(value * 0.03054);
   let valueRemessa = -(value * 0.0198974);
   let valueIof = -((value + valueRemessa) * 0.0038);
   let total = (value + valueRemessa + valueIof + valueDas);
